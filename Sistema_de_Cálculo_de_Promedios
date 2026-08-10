@@ -1,0 +1,47 @@
+# Sistema de Cálculo de Promedios
+
+
+def registrarEstudiante():
+    matricula = input("Ingrese la matrícula: ")
+    nombre = input("Ingrese el nombre: ")
+    carrera = input("Ingrese la carrera: ")
+
+    return matricula, nombre, carrera
+
+
+def calcularPromedio():
+    suma = 0
+
+    for i in range(1, 4):
+        nota = float(input("Ingrese la Nota " + str(i) + ": "))
+        suma = suma + nota
+
+    promedio = suma / 3
+
+    return promedio
+
+
+def mostrarResultado(nombre, carrera, promedio):
+
+    if promedio >= 70:
+        estado = "Aprobado"
+    else:
+        estado = "Reprobado"
+
+    print("\n===================================")
+    print("       RESULTADO DEL ESTUDIANTE")
+    print("===================================")
+    print("Nombre:", nombre)
+    print("Carrera:", carrera)
+    print("Promedio:", promedio)
+    print("Estado:", estado)
+    print("===================================")
+
+
+# Programa principal
+
+matricula, nombre, carrera = registrarEstudiante()
+
+promedio = calcularPromedio()
+
+mostrarResultado(nombre, carrera, promedio)
